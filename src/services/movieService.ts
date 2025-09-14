@@ -1,5 +1,5 @@
-import axios from 'axios';
 import type { MoviesResponse } from '../types/movie';
+import axios from 'axios';
 
 interface FetchMoviesParams {
   query: string;
