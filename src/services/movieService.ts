@@ -1,9 +1,16 @@
-import type { MoviesResponse } from '../types/movie';
+import type { Movie } from '../types/movie';
 import axios from 'axios';
 
 interface FetchMoviesParams {
   query: string;
   page?: number;
+}
+
+export interface MoviesResponse {  // ✅ Локальное определение интерфейса ответа
+  results: Movie[];
+  total_pages: number;
+  page: number;
+  total_results: number;
 }
 
 export async function fetchMovies({ query, page = 1 }: FetchMoviesParams): Promise<MoviesResponse> {
